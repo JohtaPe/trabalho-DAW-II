@@ -1,0 +1,287 @@
+/* style.css */
+
+/* Variáveis de cor */
+:root {
+    --cor-principal: #e63946;       /* vermelho vibrante */
+    --cor-secundaria: #f1f1f1;     /* cinza claro para fundo */
+    --cor-texto: #222;
+    --cor-texto-claro: #fff;
+    --cor-borda: #ccc;
+    --cor-borda-foco: #e63946;
+    --sombra: rgba(230, 57, 70, 0.4);
+    --transition: 0.3s ease;
+  }
+  
+  /* Reset simples */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 30px 15px;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  
+  /* Cabeçalhos */
+  h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: var(--cor-principal);
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px var(--sombra);
+  }
+  
+  /* Formulários */
+  form {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px var(--sombra);
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--cor-principal);
+    letter-spacing: 0.03em;
+  }
+  
+  input[type="text"],
+  input[type="file"],
+  select {
+    padding: 12px 15px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--cor-texto);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    background-color: #fff;
+  }
+  
+  input[type="text"]:focus,
+  input[type="file"]:focus,
+  select:focus {
+    border-color: var(--cor-borda-foco);
+    box-shadow: 0 0 8px var(--cor-principal);
+  }
+  
+  /* Botões */
+  .btn {
+    background-color: var(--cor-principal);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    color: var(--cor-texto-claro);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 15px var(--sombra);
+    transition: background-color var(--transition), transform var(--transition);
+    display: inline-block;
+    text-decoration: none;
+    user-select: none;
+  }
+  
+  .btn:hover,
+  .btn:focus {
+    background-color: #b82c36;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(184, 44, 54, 0.7);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(184, 44, 54, 0.5);
+  }
+  
+  .btn.cancelar {
+    background-color: #555;
+    box-shadow: none;
+  }
+  
+  .btn.cancelar:hover,
+  .btn.cancelar:focus {
+    background-color: #333;
+    box-shadow: none;
+  }
+  
+  /* Imagem logo/foto menor */
+  .Imenor {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--sombra);
+    object-fit: contain;
+    margin-top: 8px;
+    transition: transform var(--transition);
+  }
+  
+  .Imenor:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Tabela estilizada */
+  table {
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px var(--sombra);
+    overflow: hidden;
+  }
+  
+  table th,
+  table td {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  table thead th {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  
+  table tbody tr {
+    background: #fff;
+    transition: background-color 0.25s ease;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  table tbody tr:hover {
+    background-color: #ffe6e9;
+    box-shadow: 0 0 15px var(--sombra);
+  }
+  
+  /* Links na tabela */
+  table a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition);
+  }
+  
+  table a:hover {
+    color: #b82c36;
+    text-decoration: underline;
+  }
+  
+  /* Espaçamento dos inputs dentro do form */
+  form > div {
+    margin-bottom: 1.25rem;
+  }
+  
+  /* Ajustes para telas menores */
+  @media (max-width: 700px) {
+    body {
+      padding: 15px 10px;
+    }
+  
+    form {
+      padding: 20px;
+    }
+  
+    table th,
+    table td {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+    }
+  
+    .Imenor {
+      width: 50px;
+    }
+  }
+  /* Cabeçalho fixo e centralizado */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 8px var(--sombra);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Container interno para limitar largura e alinhar */
+  .header-container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  /* Links do cabeçalho */
+  header a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all var(--transition);
+    user-select: none;
+    display: inline-block;
+  }
+  
+  header a:hover,
+  header a:focus {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    border-color: var(--cor-principal);
+    box-shadow: 0 6px 15px var(--sombra);
+    transform: translateY(-2px);
+  }
+  
+  header a:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  
+  /* Espaçamento para o conteúdo ficar abaixo do header fixo */
+  body {
+    padding-top: 70px; /* Ajuste conforme a altura do header */
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 700px) {
+    header {
+      padding: 15px 10px;
+    }
+  
+    .header-container {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+  
+    header a {
+      font-size: 1rem;
+      padding: 10px 15px;
+    }
+  }

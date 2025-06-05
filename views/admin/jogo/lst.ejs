@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    </link>
+</head>
+<tbody>
+
+    <body>
+        <header>
+            <div class="header-container">
+                <a href="/admin/genero/lst">Gênero</a>
+                <a href="/admin/empresa/lst">Empresa</a>
+                <a href="/admin/jogo/lst">Jogo</a>
+            </div>
+        </header>
+
+        <!-- resto do conteúdo aqui -->
+
+    </body>
+
+
+    <h1>Jogo</h1>
+    <div>
+        <a href="/admin/jogo/add">Novo jogo</a>
+    </div>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Idade</td>
+            <td>empresa</td>
+            <td>genero</td>
+            <td>Foto</td>
+            <td>Opções</td>
+        </tr>
+        <%Jogos.forEach(function(jogo){%>
+            <tr>
+                <td>
+                    <%=jogo.nome%>
+                </td>
+                <td>
+                    <%=jogo.idade%>
+                </td>
+                <td>jogo.empresa.nome</td>
+                <td>jogo.genero.nome</td>
+                <td><img src="/fotos/<%=jogo.foto%>" class="Imenor"/><td>
+                <td><a href="/admin/jogo/edt/<%=jogo.id%>">Editar</a><br />
+                    <a href="/admin/jogo/del/<%=jogo.id%>">Excluir</a><br />
+                </td>
+            </tr>
+            <%})%>
+
+    </table>
+    </table>
+</tbody>
+
+</html>

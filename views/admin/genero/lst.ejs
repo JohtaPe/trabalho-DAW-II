@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    </link>
+</head>
+<tbody>
+    <body>
+        <header>
+          <div class="header-container">
+            <a href="/admin/genero/lst">Gênero</a>
+            <a href="/admin/empresa/lst">Empresa</a>
+            <a href="/admin/jogo/lst">Jogo</a>
+          </div>
+        </header>
+      
+        <!-- resto do conteúdo aqui -->
+      
+      </body>
+      
+
+    <h1>Gênero</h1>
+    <div>
+        <a href="/admin/genero/add">Novo gênero</a>
+    </div>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Opções</td>
+        </tr>
+        <%Generos.forEach(function(genero){%>
+            <tr>
+                <td>
+                    <%=genero.nome%>
+                </td>
+                <td><a href="/admin/genero/edt/<%=genero.id%>">Editar</a><br />
+                    <a href="/admin/genero/del/<%=genero.id%>">Excluir</a><br />
+                </td>
+            </tr>
+            <%})%>
+
+    </table>
+    </table>
+</tbody>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=for, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    </link>
+</head>
+
+<body>
+    <h1>Cadastrar jogo</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="" form-group>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <div>
+            <label for="nome">Foto:</label>
+            <input type="file" id="foto" name="foto">
+        </div>
+        <div>
+            <select name="idade" id="idade">
+                <option value="">selecione</option>
+                <option value="L">Livre</option>
+                <option value="10">10 Anos</option>
+                <option value="12">12 Anos</option>
+                <option value="16">16 Anos</option>
+                <option value="18">18 Anos</option>
+            </select>
+        </div>
+        <div>
+            <label for="nome">video:</label>
+            <input type="text" id="video" name="video">
+        </div>
+        <div>
+            <label for="empresa">Empresa:</label>
+            <select name="empresa" id="empresa">
+                <option value="">selecione</option>
+                <%Empresas.forEach(function(emp){%>>
+                    <option value="<%=emp.id%>">
+                        <%=emp.nome%>
+                    </option>
+                    <%})%>
+            </select>
+        </div>
+        <div>
+            <label for="genero">Genero:</label>
+            <select name="genero" id="genero">
+                <option value="">selecione</option>
+                <%Generos.forEach(function(gen){%>>
+                    <option value="<%=gen.id%>">
+                        <%=gen.nome%>
+                    </option>
+                    <%})%>
+            </select>
+        </div>
+
+        <button type="submit" class="btn">Confirmar</button>
+        <a href="/admin/jogo/lst" class="btn cancelar">Cancelar</a>
+    </form>
+</body>
+
+</html>

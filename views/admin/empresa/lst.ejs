@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    </link>
+</head>
+<tbody>
+    <body>
+        <header>
+          <div class="header-container">
+            <a href="/admin/genero/lst">Gênero</a>
+            <a href="/admin/empresa/lst">Empresa</a>
+            <a href="/admin/jogo/lst">Jogo</a>
+          </div>
+        </header>
+      
+        <!-- resto do conteúdo aqui -->
+      
+      </body>
+      
+
+    <h1>Empresa</h1>
+    <div>
+        <a href="/admin/empresa/add">Nova empresa</a>
+    </div>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>País</td>
+            <td>Logo</td>
+            <td>Opções</td>
+        </tr>
+        <%Empresas.forEach(function(empresa){%>
+            <tr>
+                <td><%=empresa.nome%></td>
+                <td><%=empresa.pais%></td>
+                <td><img src="/fotos/<%=empresa.logo%>" class="Imenor"/></td>
+                <td><a href="/admin/empresa/edt/<%=empresa.id%>">Editar</a><br />
+                    <a href="/admin/empresa/del/<%=empresa.id%>">Excluir</a><br />
+                </td>
+            </tr>
+            <%})%>
+
+    </table>
+    </table>
+</tbody>
+
+</html>

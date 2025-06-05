@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=for, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    </link>
+</head>
+<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=for, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Editar Empresa</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <input type="hidden" value="<%=Empresa.id%>" name="id"><br>
+            <label for="nome">Nome:</label>
+            <input type="text" value="<%=Empresa.nome%>" name="nome" id="nome"><br>
+        </div>
+        <div>
+            <input type="hidden" value="<%=Empresa.id%>" name="id"><br>
+            <label for="nome">País:</label>
+            <input type="text" value="<%=Empresa.pais%>" name="pais" id="pais"><br>
+        </div>
+        <div class="form-group">
+            <img src="/fotos/<%=Empresa.logo%>" class="Imenor">
+            <input type="hidden" value="<%=Empresa.id%>" name="id"><br>
+            <label for="nome">Logo:</label>
+            <input type="file" value="<%=Empresa.logo%>" name="logo" id="logo"><br>
+        </div>
+
+        <button type="submit">Confirmar</button>
+        <a href="/admin/empresa/lst" class="btn cancelar">Voltar</a>
+    </form>
+<br>
+       
+</body>
+</html>

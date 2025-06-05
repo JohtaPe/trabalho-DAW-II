@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <style>
+    :root {
+      --cor-principal: #e63946;
+      --cor-secundaria: #f1f1f1;
+      --cor-texto: #222;
+      --cor-texto-claro: #fff;
+      --cor-borda: #ccc;
+      --cor-borda-foco: #e63946;
+      --sombra: rgba(230, 57, 70, 0.4);
+      --transition: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--cor-secundaria);
+      color: var(--cor-texto);
+      padding: 30px 15px;
+      min-height: 100vh;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: var(--cor-principal);
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px var(--sombra);
+    }
+
+    /* Container centralizado para os links */
+    .tabs {
+      display: flex;
+      gap: 25px;
+      background: #fff;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px var(--sombra);
+      max-width: 600px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .tabs a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--cor-principal);
+      padding: 12px 25px;
+      border: 2px solid transparent;
+      border-radius: 50px;
+      transition: all var(--transition);
+      user-select: none;
+    }
+
+    .tabs a:hover,
+    .tabs a:focus {
+      background-color: var(--cor-principal);
+      color: var(--cor-texto-claro);
+      border-color: var(--cor-principal);
+      box-shadow: 0 6px 15px var(--sombra);
+      transform: translateY(-2px);
+    }
+
+    .tabs a:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 15px 10px;
+      }
+
+      .tabs {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .tabs a {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Bem-vindo ao Site</h1>
+  <nav class="tabs">
+    <a href="admin/genero/lst">Gênero</a>
+    <a href="admin/empresa/lst">Empresa</a>
+    <a href="admin/jogo/lst">Jogo</a>
+  </nav>
+</body>
+
+</html>

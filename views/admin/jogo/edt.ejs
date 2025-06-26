@@ -1,73 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=for, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
-    </link>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editar Jogo</title>
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
-    <html lang="en">
+    <h1>Editar Jogo</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" value="<%= Jogo.id %>" name="id" />
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=for, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" value="<%= Jogo.nome %>" name="nome" id="nome" />
+        </div>
 
-    <body>
-        <h1>Editar Jogo</h1>
-        <form method="post">
-            <div class="mb-3">
-                <input type="hidden" value="<%=Jogo.id%>" name="id"><br>
-                <label for="nome">Nome</label>
-                <input type="text" value="<%=Jogo.nome%>" name="nome" id="nome" class="form-control">
-            </div>
-            <div class="mb-3">
-                <select name="idade" id="idade">
-                    <option value="">selecione</option>
-                    <option value="L">Livre</option>
-                    <option value="10">10 Anos</option>
-                    <option value="12">12 Anos</option>
-                    <option value="16">16 Anos</option>
-                    <option value="18">18 Anos</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <img src="/fotos/<%Jogo.foto%>" class="" foto />
-                <label for="nome">Foto</label>
-                <input type="file" name="foto" id="foto"><br>
-            </div>
-            <div class="mb-3">
-                <label for="empresa">Empresa:</label>
-                <select name="empresa" id="empresa">
-                    <option value="">selecione</option>
-                    <%Empresas.forEach(function(emp){%>>
-                        <option value="<%=emp.id%>">
-                            <%=emp.nome%>
-                        </option>
-                        <%})%>
-                </select>
-            </div>
-            <div>
-                <label for="genero">Genero:</label>
-                <select name="genero" id="genero">
-                    <option value="">selecione</option>
-                    <%Generos.forEach(function(gen){%>>
-                        <option value="<%=gen.id%>">
-                            <%=gen.nome%>
-                        </option>
-                        <%})%>
-                </select>
-            </div>
-            <button type="submit">Confirmar</button>
-            <a href="/admin/jogo/lst" class="btn cancelar">Voltar</a>
-        </form>
-        <br>
+        <div>
+            <label for="idade">Idade</label>
+            <select name="idade" id="idade">
+                <option value="">selecione</option>
+                <option value="L" <%= Jogo.idade === 'L' ? 'selected' : '' %>>Livre</option>
+                <option value="10" <%= Jogo.idade === '10' ? 'selected' : '' %>>10 Anos</option>
+                <option value="12" <%= Jogo.idade === '12' ? 'selected' : '' %>>12 Anos</option>
+                <option value="16" <%= Jogo.idade === '16' ? 'selected' : '' %>>16 Anos</option>
+                <option value="18" <%= Jogo.idade === '18' ? 'selected' : '' %>>18 Anos</option>
+            </select>
+        </div>
 
-    </body>
+        <div>
+            <img src="/fotos/<%= Jogo.foto %>" alt="Foto do jogo" style="max-width:150px" />
+            <label for="foto">Foto</label>
+            <input type="file" name="foto" id="foto" />
+        </div>
 
-    </html>
+        <div>
+            <label for="empresa">Empresa:</label>
+            <select name="empresa" id="empresa">
+                <option value="">selecione</option>
+                <% Empresas.forEach(function(emp){ %>
+                    <option value="<%= emp.id %>" <%= Jogo.empresa && Jogo.empresa.toString() === emp.id.toString() ? 'selected' : '' %>><%= emp.nome %></option>
+                <% }) %>
+            </select>
+        </div>
+
+        <div>
+            <label for="genero">Genero:</label>
+            <select name="genero" id="genero">
+                <option value="">selecione</option>
+                <% Generos.forEach(function(gen){ %>
+                    <option value="<%= gen.id %>" <%= Jogo.genero && Jogo.genero.toString() === gen.id.toString() ? 'selected' : '' %>><%= gen.nome %></option>
+                <% }) %>
+            </select>
+        </div>
+
+        <button type="submit">Confirmar</button>
+        <a href="/admin/jogo/lst">Voltar</a>
+    </form>
+</body>
+
+</html>

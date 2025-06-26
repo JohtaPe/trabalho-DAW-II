@@ -18,12 +18,7 @@
                 <a href="/admin/jogo/lst">Jogo</a>
             </div>
         </header>
-
-        <!-- resto do conteúdo aqui -->
-
     </body>
-
-
     <h1>Jogo</h1>
     <div>
         <a href="/admin/jogo/add">Novo jogo</a>
@@ -45,8 +40,8 @@
                 <td>
                     <%=jogo.idade%>
                 </td>
-                <td>jogo.empresa.nome</td>
-                <td>jogo.genero.nome</td>
+                <td><%=empresa.nome%></td>
+                <td><%=genero.nome%></td>
                 <td><img src="/fotos/<%=jogo.foto%>" class="Imenor"/><td>
                 <td><a href="/admin/jogo/edt/<%=jogo.id%>">Editar</a><br />
                     <a href="/admin/jogo/del/<%=jogo.id%>">Excluir</a><br />

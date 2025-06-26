@@ -180,3 +180,4 @@ export async function edtjogo(req, res){
     })
     res.redirect('/admin/jogo/lst')
 }
+
